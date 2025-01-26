@@ -1,0 +1,82 @@
+
+.search-bar{
+    background: white;
+    border-radius: 0.5rem;
+    padding: var(--search-padding);
+}
+.carousel-control-prev div,
+.carousel-control-next div{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*flash sale section*/
+
+.flash-sale h2,
+.just-for-you h2{
+    font-family: 'GoogleSans-M', SansSerif;
+    color: black;
+    margin-bottom: 0px;
+    padding: 10px 10px 0px 10px;
+    font-size: 1.7rem;
+}
+
+.sale-item .offer-tag{
+    background: #7fda69;
+    width: fit-content;
+    padding: 2px 3px;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.sale-item .main-price,
+.sale-item .original-price{
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+.sale-item .original-price{
+    margin-left: 5px;
+    color: black;
+    opacity: 0.5;
+}
+
+.img-box img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    pointer-events: none;
+}
+
+.sale-item:hover{
+    box-shadow: 0 0  black;
+    cursor: pointer;
+}
+
+.slider-container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 16em;
+    overflow-x: scroll;
+    scroll-snap-type: x;
+    gap: 10px;
+    padding: 10px;
+}
+
+.sale-item{
+    background: white;
+    padding: 10px 12px;
+    scroll-snap-align: start;
+    border-radius: 0.3rem;
+}
+
+.flash-sale,
+.just-for-you{
+    background: var(--color-dark-grey);
+    margin-top: 2rem;
+}

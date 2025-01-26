@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/pool</property>
+
+<!--        <property name="hibernate.c3p0.min_size">1</property>-->
+<!--        <property name="hibernate.c3p0.max_size">1</property>-->
+<!--        <property name="hibernate.c3p0.timeout">300</property>-->
+<!--        <property name="hibernate.c3p0.max_statements">50</property>-->
+
+        <!-- Hibernate properties -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="lk.ijse.demo.entity.User"/>
+        <mapping class="lk.ijse.demo.entity.Product"/>
+        <mapping class="lk.ijse.demo.entity.Cart"/>
+        <mapping class="lk.ijse.demo.entity.Admin"/>
+        <mapping class="lk.ijse.demo.entity.CartItem"/>
+        <mapping class="lk.ijse.demo.entity.Category"/>
+        <mapping class="lk.ijse.demo.entity.Order"/>
+        <mapping class="lk.ijse.demo.entity.OrderDetail"/>
+        <mapping class="lk.ijse.demo.entity.SaleProduct"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,214 @@
+/*Created by IntelliJ IDEA.*/
+/*User: Rashmika Navo*/
+/*Date: 1/16/2025*/
+/*Time: 10:58 AM*/
+
+@font-face {
+    font-family: 'GoogleSans-M';
+    src: url(../fonts/GoogleSans-Medium.ttf);
+}
+@font-face {
+    font-family: 'GoogleSans-R';
+    src: url(../fonts/GoogleSans-Regular.ttf);
+}
+@font-face {
+    font-family: 'GoogleSans-B';
+    src: url(../fonts/GoogleSans-Bold.ttf);
+}
+
+:root{
+    --color-black: black;
+    --color-dark: #141920;
+    --color-medium: #252F3D;
+
+    --color-yellow: #ffd814;
+    --color-hover-yellow: #ffce12;
+
+    --color-orange: #ffa41c;
+    --color-hover-orange: #fa8900;
+
+    --color-grey: #e3e3e3;
+    --color-dark-grey: #C9CCCC;
+    --color-disable-grey: #565959;
+
+    --border-radius:2rem;
+    --card-border-radius:1rem;
+    --btn-padding: 0.4rem 4rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+
+    --sticky-top-left: 9.4rem;
+    --sticky-top-right: -18rem;
+}
+
+.row{
+    --bs-gutter-x: 0;
+}
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box ;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+th{
+    font-family: 'GoogleSans-M';
+}
+td{
+    font-family: 'GoogleSans-R';
+}
+td a{
+    display: block;
+}
+
+body{
+    font-family: 'GoogleSans-M', SansSerif;
+    background: var(--color-grey);
+}
+
+nav{
+    width: 100%;
+    background: #232f3e;
+    padding: 2rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-logo{
+    width: 180px;
+}
+
+.container h2{
+    color: white;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav div a{
+    color: white;
+    text-decoration: none;
+    font-family: 'GoogleSans-M';
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+    padding: 15px 10px;
+}
+
+nav div a:hover{
+    padding: 15px 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+
+/*Main section*/
+main{
+    position: relative;
+    top: 9.4rem;
+}
+
+main .container div div:first-child .left{
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-left);
+    background-color: white;
+    border-radius: var(--card-border-radius);
+    margin-right: 1rem;
+}
+
+main .container div div:last-child .right{
+    background-color: white;
+    border-radius: var(--card-border-radius);
+    padding: 1rem;
+}
+
+main .container div div:first-child .left .menu-item{
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0.5rem;
+    position: relative;
+}
+
+main .container div div:first-child .left .menu-item i{
+    font-size: 1.4rem;
+    color: black;
+    margin-left: 1rem;
+}
+
+main .container div div:first-child .left .menu-item h3{
+    font-size: 1.2rem;
+    font-family: 'GoogleSans-M';
+    color: black;
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+
+.menu-item-content div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    font-family: 'GoogleSans-R';
+}
+
+.menu-item-content div a{
+    position: relative;
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.menu-item-content div a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FF2D55;
+    transition: width 0.3s ease;
+}
+
+.menu-item-content div a:hover::after{
+    width: 75%;
+}
+.menu-item-content div a:hover{
+    color: #FF2D55;
+}
+
+
+.tbl-btn{
+    text-decoration: none;
+    font-family: 'GoogleSans-M';
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.delete-btn{
+    color: #FF3B30;
+}
+
+.update-btn{
+    color: #A2845E;
+}
+
+.disable-btn{
+    color: var(--color-dark-grey);
+}
+.active-btn{
+    color: #34C759;
+}
