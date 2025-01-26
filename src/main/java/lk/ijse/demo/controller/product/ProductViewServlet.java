@@ -9,7 +9,6 @@ import lk.ijse.demo.entity.Product;
 import lk.ijse.demo.entity.SaleProduct;
 import lk.ijse.demo.util.HibernateUtil;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import javax.json.Json;
 import javax.json.JsonArrayBuilder;
@@ -30,18 +29,25 @@ public class ProductViewServlet extends HttpServlet {
             productList = session.createQuery("from Product", Product.class).list();
             session.close();
 
-//            JsonArrayBuilder productList = Json.createArrayBuilder();
-//            for(SaleProduct sale_product: productList){
-//                JsonObjectBuilder sp = Json.createObjectBuilder();
-//                sp.add("productId", sale_product.getProductId());
-//                sp.add("imageUrl", sale_product.getImageUrl());
-//                sp.add("title", sale_product.getTitle());
-//                sp.add("price", sale_product.getPrice());
-//                sp.add("priceDecimal", sale_product.getPriceDecimal());
-//                sp.add("originalPrice", sale_product.getOriginalPrice());
-//                sp.add("discount", sale_product.getDiscount());
-//                productList.add(sp);
-//            }
+            JsonArrayBuilder allProduct = Json.createArrayBuilder();
+            for(Product product : productList){
+                JsonObjectBuilder p = Json.createObjectBuilder();
+                p.add("productId", product.getProductId());
+                p.add("productName", product.getProductName());
+                p.add("description", product.getDescription());
+                p.add("image", product.getImage());
+                p.add("price", product.getPrice());
+                p.add("quantity", product.getQuantity());
+                allProduct.add(p);
+            }
+
+            JsonObjectBuilder response = Json.createObjectBuilder();
+            response.add("status", HttpServletResponse.SC_OK);
+            response.add("alert", "success");
+            response.add("alertMessage", "provide product");
+            response.add("data", allProduct);
+            resp.setContentType("application/json");
+            resp.getWriter().write(response.build().toString());
 
             req.setAttribute("list", productList);
             req.setAttribute("list_type","Product");
