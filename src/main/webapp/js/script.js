@@ -54,8 +54,13 @@ const setSaleItem = (data) =>{
 };
 
 const makeUserAcc = (id, name) => {
+    // window.location.href -> ema tab ekema open kirimata
+    // window.open(url,"_blank")
+
     const uppercaseName = name.toUpperCase();
-    window.location.href = 'user.jsp?value1=' + encodeURIComponent(uppercaseName) + '&value2=' + encodeURIComponent(id);
+     const url = 'user.jsp?value1=' + encodeURIComponent(uppercaseName) + '&value2=' + encodeURIComponent(id);
+    window.location.replace(url);
+
     };
 
 $('#navigate-cart').on('click', ()=>{
@@ -117,4 +122,7 @@ $('#log-in-btn').on('click',(e)=>{
 
 })
 
-
+$('#log-out').on('click',(e)=>{
+    e.preventDefault();
+    window.location.replace('index.jsp');
+})

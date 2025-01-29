@@ -48,7 +48,7 @@
 
         <div class="d-flex align-items-center gap-1">
             <a id="id-user" class="nav-btn" href="" ></a>
-            <a id="log-out" class="nav-btn"  href=""></a>
+            <a id="log-out" class="nav-btn"></a>
             <span  id="navigate-cart"><i style="color: white" class="uil uil-shopping-cart icon shop"></i></span>
         </div>
 
